@@ -1,0 +1,20 @@
+https://techvblogs.com/blog/how-to-install-vue3-laravel
+
+#create laravel project
+composer create-project --prefer-dist laravel/laravel [project-name]
+
+#install vue3
+npm install --save vue@next 
+npm install --save-dev vue-loader@next
+
+#change webpack.mix.js
+    mix.js('resources/js/app.js', 'public/js')
+    .vue()
+
+#update vue-loader
+npm update vue-loader
+
+
+
+#auth setup
+https://shouts.dev/articles/laravel-spa-with-vue3-auth-crud-example
