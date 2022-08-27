@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+Route::get('/', function () {
+    return view('app');
+});
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
 // });
 
-Route::get('{any}', function () {
-    return view('app');
-})->where('any', '.*');
+// Route::get('{any}', function () {
+//     return view('app');
+// })->where('any', '.*');
